@@ -32,7 +32,7 @@ public class Distinct {
 		return sb.toString(); 
 	}
 	
-	
+	 
 	public static String getCnt(String ori, String tar){	
 		StringBuffer sb = new StringBuffer();
 		char tchar=0;

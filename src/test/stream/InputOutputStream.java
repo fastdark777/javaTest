@@ -38,6 +38,7 @@ public class InputOutputStream {
         System.out.println(hangle[1]);
         System.out.println(new String(hangle));
         System.out.println(StringUtil.getString(by));
+        System.out.println(by);
         //System.out.println(by[4]);
         
        /* System.out.write(by[4]);
