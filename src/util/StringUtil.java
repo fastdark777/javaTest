@@ -6,13 +6,13 @@ public  class StringUtil {
 	
 	public static void main(String[] args) {
 		
-		/*String aa="[국제전화002]   제성종합물류(주)님 1분48초 002통화요금     1,320원 -당월누적요금 8,880원";
+		String aa="[국제전화002]   제성종합물류(주)님 1분48초 002통화요금     1,320원 -당월누적요금 8,880원";
 		String bb="aa";
-		System.out.println(bb.getBytes());
+		System.out.println(new String(aa.getBytes()));
 		
-		byte[] baa=bb.getBytes();*/
+		byte[] baa=bb.getBytes();
 		
-		System.out.println(getCommaa("12312312"));
+		//System.out.println(getCommaa("12312312"));
 	}
 
 	public static String writeByte(String str, int len){
