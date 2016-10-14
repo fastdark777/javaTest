@@ -18,10 +18,10 @@ public class FileStream {
 	 */
 	public static void main(String[] args) {
 		
-		FileStream f = new FileStream();
-		
 		try {
-			f.test1();
+			//fileOutputStream();
+			
+			dataInputOuptStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +29,7 @@ public class FileStream {
 
 	}
 	
-	public void test1() throws IOException{
+	public static void fileOutputStream() throws IOException{
 		File file = new File("c:\\iotest", "stream.txt");
 		
 		if (!file.exists()) {
@@ -47,32 +47,55 @@ public class FileStream {
 		fos.write(99); // c가 stream.txt에 쓰여짐
 		
 		
-		String testString="\n this is byte test";
-		String testString1="\n 이것은 한글";
+		String testString="\nthis is byte test";
+		String testString1="\n이것은 한글";
 		byte[] b = testString.getBytes();
-		//fos.write(b);
+		fos.write(b);
 		fos.write(testString1.getBytes());
 		fos.close();
-		
-		
+				
 		// 읽기
 		FileInputStream fis = new FileInputStream("c:\\iotest\\stream.txt");
 		
-		byte[] bb = new byte[16];
-		
-		DataInputStream dis = new DataInputStream(fis);
-		//dis.read(bb,0,16);
-		
-		
-		System.out.println(StringUtil.getString(dis.rea));
-		//System.out.println(StringUtil.getString(bb));
-		
 		int data = 0; 
 		while ((data = fis.read()) != -1) { // 더 이상 읽을것이 없을 때 -1
-		    //System.out.print((char) data); //스트림이 읽은 바이트코드를 문자로 변환하여 출력
-		//    System.out.println(data); //스트림이 읽은 바이트코드를 문자로 변환하여 출력
+		    System.out.print((char) data); //스트림이 읽은 바이트코드를 문자로 변환하여 출력
+		    //System.out.println(data); //스트림이 읽은 바이트 코드 출력
+	
 		}
 		fis.close();
+		
+	}
+	
+	
+	public static void dataInputOuptStream() throws IOException{
+		File file = new File("c:\\iotest\\sample.dat");
+		 
+		// 쓰기
+		DataOutputStream dos = new DataOutputStream(new FileOutputStream(file));
+		dos.writeBoolean(true);
+		dos.write(5);
+		dos.writeByte((byte) 5);
+		dos.writeInt(100);
+		dos.writeDouble(200.5);
+		dos.writeUTF("utfutfutf");
+		dos.writeBoolean(false);
+		//dos.writeBoolean(false);
+		 
+		dos.flush();
+		dos.close();
+		 
+		// 읽기
+		DataInputStream dis = new DataInputStream(new FileInputStream(file));
+		System.out.println(dis.readBoolean());
+		System.out.println(dis.read());
+		System.out.println(dis.readByte());
+		System.out.println(dis.readInt());
+		System.out.println(dis.readDouble());
+		System.out.println(dis.readUTF());
+		System.out.println(dis.readBoolean());
+		dis.close();
+
 	}
 
 }
