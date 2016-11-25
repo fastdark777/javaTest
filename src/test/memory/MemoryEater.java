@@ -20,7 +20,8 @@ public class MemoryEater {
 			Runtime rt = Runtime.getRuntime();
 			System.out.println("free memory: " + StringUtil.getComma(rt.freeMemory()));
 			
-			// memory info
+			//commit test
+			// memory info 
 			int mb = 1024*1024;
 					
 			System.out.println("** Used Memory:  " + (rt.totalMemory() - rt.freeMemory()) / mb);
