@@ -5,11 +5,11 @@ import etc.Constants;
 public class LottoRandom extends Constants{
 
 	public static void main(String[] args) {
-	
+	    
         int arr[]= new int[6];
         int i,j,k;
         int x;
-        System.out.println("* 금주의 로또 번호 *");
+        System.out.println("* 금주의 로또 번호 * ");
         System.out.println("-------------------------------------------------------");
         for(i=0;i<6;i++){   // 랜덤수 6개 생성
             x=(int)((Math.random()*45)+1);  // 랜덤함수 호출 (범위 1-45)
