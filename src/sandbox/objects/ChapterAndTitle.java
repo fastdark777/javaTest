@@ -25,7 +25,7 @@ public class ChapterAndTitle {
         file.getParentFile().mkdirs();
         new ChapterAndTitle().createPdf(DEST);
     }
-  
+ 
     public void createPdf(String dest) throws IOException, DocumentException {
         Document document = new Document();
         PdfWriter.getInstance(document, new FileOutputStream(dest));
@@ -36,7 +36,6 @@ public class ChapterAndTitle {
         Chapter chapter = new Chapter(new Paragraph(chunk), 1);
         chapter.setNumberDepth(0);
         chapter.add(new Paragraph("This is the paragraph", paragraphFont));
-        chapter.add(new Paragraph("This is the paragraph1111", paragraphFont));
         document.add(chapter);
         document.close();
     }
